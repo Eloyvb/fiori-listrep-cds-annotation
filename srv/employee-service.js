@@ -1,4 +1,6 @@
 const cds = require('@sap/cds');
+const token = require('../utils/tokens');
+const email = require('../utils/email');
 
 module.exports = class EmployeeService extends cds.ApplicationService{
     init() {
@@ -29,8 +31,14 @@ module.exports = class EmployeeService extends cds.ApplicationService{
                     email: ""
                 }
             ];
+
+            req.data.token = token.generateID();
         }) ;
         
+this.after('SAVE', Employees, async req=>{
+  await email.sendEmail(req);
+});
+
         return super.init();
     }
 }

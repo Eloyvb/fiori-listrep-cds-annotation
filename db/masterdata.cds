@@ -25,6 +25,7 @@ entity Person : MasterData, cuid, managed {
     gender         : Association to VH_Genders      @mandatory;
     civilStatus    : Association to VH_CivilStatus  @mandatory;
     criticality    : Int16 default 1; //  para los estatus statu
+    token          : String;   //Se agrego posteriormente para lo del correo
     statu          : Association to VH_Status;
     address        : Composition of Addresses;
     contact        : Composition of Contacts;
