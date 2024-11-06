@@ -53,7 +53,7 @@ annotate call.Employees with @(
         },
         {
             $Type            : 'UI.DataField',
-            Value            : typeUser.name,
+            Value            :  typeUser.name,
             ![@UI.Importance]: #High
         },
         {
@@ -94,6 +94,7 @@ annotate call.Employees with @(
         {
             $Type            : 'UI.DataField',
             Value            : statu_code,
+            Criticality: criticality,
             ![@UI.Importance]: #High
         },
     ],
@@ -161,6 +162,7 @@ annotate call.Employees with @(
         {
             $Type: 'UI.DataField',
             Value: statu_code,
+            Criticality: criticality,
 
         }
     ],

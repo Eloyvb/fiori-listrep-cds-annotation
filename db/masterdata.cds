@@ -24,6 +24,7 @@ entity Person : MasterData, cuid, managed {
     nationality    : String;
     gender         : Association to VH_Genders      @mandatory;
     civilStatus    : Association to VH_CivilStatus  @mandatory;
+    criticality    : Int16 default 1; //  para los estatus statu
     statu          : Association to VH_Status;
     address        : Composition of Addresses;
     contact        : Composition of Contacts;
@@ -121,10 +122,10 @@ entity VH_CivilStatus : MasterData, CodeList {
 @readonly
 entity VH_Status : MasterData, CodeList {
     key code : String enum {
-            Active   = '3';
-            Inactive = '1';
-            Pending  = '2';
-        } default '1';
+            Active   = 'Active'; //Verde
+            Inactive = 'Inactive'; //Rojo
+            Pending  = 'Pending'; //Anaranjado   semaforo
+        } default 'Inactive';
 };
 
 @readonly

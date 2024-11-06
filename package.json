@@ -7,14 +7,15 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^8.4.0",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "nodemailer": "^6.9.16"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.6.5",
     "@cap-js/sqlite": "^1.7.5"
   },
-  "cds":{
-    "[dev]":{
+  "cds": {
+    "[dev]": {
       "requires": {
         "db": {
           "kind": "sqlite",
